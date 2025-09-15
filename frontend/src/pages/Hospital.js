@@ -1,0 +1,1 @@
+// Hospital page for managing hospital resources and information

@@ -1,0 +1,1 @@
+// Emergency vehicle page for managing ambulance dispatching

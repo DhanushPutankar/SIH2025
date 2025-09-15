@@ -1,0 +1,19 @@
+{
+    "junctions": [
+        {
+            "id": "j1",
+            "type": "hospital",
+            "name": "City Hospital"
+        },
+        {
+            "id": "j2",
+            "type": "signal",
+            "signal_id": "S123"
+        },
+        {
+            "id": "j3",
+            "type": "signal",
+            "signal_id": "S124"
+        }
+    ]
+}

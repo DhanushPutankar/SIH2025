@@ -1,0 +1,1 @@
+// Signal status component for displaying and managing traffic signal states

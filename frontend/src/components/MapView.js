@@ -1,26 +1,33 @@
-// Map view component for displaying the city map and vehicle locations
+import React from 'react';
 
-import React, { useEffect, useState } from "react";
-
-function MapView() {
-  const [mapData, setMapData] = useState(null);
-
-  useEffect(() => {
-    fetch("http://localhost:5000/api/traffic/map") // backend endpoint
-      .then((res) => res.json())
-      .then((data) => setMapData(data));
-  }, []);
-
+const MapView = ({ route, emergencyActive }) => {
   return (
     <div className="map-container">
-      <h3>Live Map</h3>
-      {mapData ? (
-        <pre>{JSON.stringify(mapData, null, 2)}</pre>
-      ) : (
-        <p>Loading map...</p>
-      )}
+      <div className="map-placeholder">
+        <div>
+          <h3>🗺️ Traffic Network Map</h3>
+          <p>SUMO Simulation Integration</p>
+          {emergencyActive && (
+            <div style={{ marginTop: '1rem' }}>
+              <div className="status status-emergency">
+                🚨 Emergency Route Active
+              </div>
+              {route && (
+                <div style={{ marginTop: '0.5rem' }}>
+                  <strong>Route:</strong> {route.join(' → ')}
+                </div>
+              )}
+            </div>
+          )}
+          <div style={{ marginTop: '1rem', fontSize: '0.9rem', color: '#7f8c8d' }}>
+            <p>• Red dots: Congested junctions</p>
+            <p>• Green dots: Normal flow</p>
+            <p>• Yellow dots: Emergency mode</p>
+          </div>
+        </div>
+      </div>
     </div>
   );
-}
+};
 
 export default MapView;

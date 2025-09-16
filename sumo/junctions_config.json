@@ -1,19 +1,17 @@
 {
-    "junctions": [
-        {
-            "id": "j1",
-            "type": "hospital",
-            "name": "City Hospital"
-        },
-        {
-            "id": "j2",
-            "type": "signal",
-            "signal_id": "S123"
-        },
-        {
-            "id": "j3",
-            "type": "signal",
-            "signal_id": "S124"
-        }
+    "junctions": {
+        "J1": {"type": "traffic_light", "hospital_nearby": true, "priority": "high"},
+        "J2": {"type": "traffic_light", "hospital_nearby": false, "priority": "medium"}, 
+        "J3": {"type": "traffic_light", "hospital_nearby": false, "priority": "medium"},
+        "J4": {"type": "traffic_light", "hospital_nearby": false, "priority": "medium"},
+        "J5": {"type": "traffic_light", "hospital_nearby": false, "priority": "high"},
+        "J6": {"type": "traffic_light", "hospital_nearby": true, "priority": "high"}
+    },
+    "hospitals": {
+        "H1": {"name": "City Hospital", "junction": "J1"},
+        "H2": {"name": "Emergency Medical Center", "junction": "J6"}
+    },
+    "emergency_routes": [
+        {"from": "H1", "to": "H2", "junctions": ["J1", "J2", "J5", "J6"]}
     ]
 }

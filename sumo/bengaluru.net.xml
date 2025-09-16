@@ -1,1 +1,29 @@
- # network file (generated with netconvert)
+<?xml version="1.0" encoding="UTF-8"?>
+<net version="1.20" junctionCornerDetail="5" limitTurnSpeed="5.50" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/net_file.xsd">
+    <location netOffset="0.00,0.00" convBoundary="0.00,0.00,1000.00,1000.00" origBoundary="-10000000000.00,-10000000000.00,10000000000.00,10000000000.00" projParameter="!"/>
+    
+    <!-- Junctions -->
+    <junction id="J1" type="traffic_light" x="200.00" y="200.00" incLanes="E1_0 S1_0 W1_0 N1_0" intLanes=":J1_0_0 :J1_1_0 :J1_2_0 :J1_3_0"/>
+    <junction id="J2" type="traffic_light" x="500.00" y="200.00" incLanes="E2_0 S2_0 W2_0 N2_0" intLanes=":J2_0_0 :J2_1_0 :J2_2_0 :J2_3_0"/>
+    <junction id="J3" type="traffic_light" x="800.00" y="200.00" incLanes="E3_0 S3_0 W3_0 N3_0" intLanes=":J3_0_0 :J3_1_0 :J3_2_0 :J3_3_0"/>
+    <junction id="J4" type="traffic_light" x="200.00" y="500.00" incLanes="E4_0 S4_0 W4_0 N4_0" intLanes=":J4_0_0 :J4_1_0 :J4_2_0 :J4_3_0"/>
+    <junction id="J5" type="traffic_light" x="500.00" y="500.00" incLanes="E5_0 S5_0 W5_0 N5_0" intLanes=":J5_0_0 :J5_1_0 :J5_2_0 :J5_3_0"/>
+    <junction id="J6" type="traffic_light" x="800.00" y="500.00" incLanes="E6_0 S6_0 W6_0 N6_0" intLanes=":J6_0_0 :J6_1_0 :J6_2_0 :J6_3_0"/>
+    
+    <!-- Hospital Junctions -->
+    <junction id="H1" type="priority" x="100.00" y="100.00" incLanes="EH1_0" intLanes=":H1_0_0"/>
+    <junction id="H2" type="priority" x="900.00" y="600.00" incLanes="EH2_0" intLanes=":H2_0_0"/>
+
+    <!-- Edges connecting junctions -->
+    <edge id="J1J2" from="J1" to="J2" priority="2" numLanes="1" speed="13.89"/>
+    <edge id="J2J3" from="J2" to="J3" priority="2" numLanes="1" speed="13.89"/>
+    <edge id="J4J5" from="J4" to="J5" priority="2" numLanes="1" speed="13.89"/>
+    <edge id="J5J6" from="J5" to="J6" priority="2" numLanes="1" speed="13.89"/>
+    <edge id="J1J4" from="J1" to="J4" priority="2" numLanes="1" speed="13.89"/>
+    <edge id="J2J5" from="J2" to="J5" priority="2" numLanes="1" speed="13.89"/>
+    <edge id="J3J6" from="J3" to="J6" priority="2" numLanes="1" speed="13.89"/>
+    
+    <!-- Hospital connections -->
+    <edge id="H1J1" from="H1" to="J1" priority="1" numLanes="1" speed="11.11"/>
+    <edge id="J6H2" from="J6" to="H2" priority="1" numLanes="1" speed="11.11"/>
+</net>
